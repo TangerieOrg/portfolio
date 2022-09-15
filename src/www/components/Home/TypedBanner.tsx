@@ -19,7 +19,7 @@ export default function TypedBanner() {
         return seq;
     }, []);
 
-    return <>
+    return <div>
         <h1 class="text-8xl font-extralight">
             <TypeAnimation
                 sequence={sequence}
@@ -27,8 +27,8 @@ export default function TypedBanner() {
                 repeat={Infinity}
             />
         </h1>
-        <h2 class="mt-8 text-4xl font-extralight">
+        {/* <h2 class="mt-8 text-4xl font-extralight">
             Welcome to my site
-        </h2>
-    </>
+        </h2> */}
+    </div>
 }

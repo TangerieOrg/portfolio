@@ -12,11 +12,11 @@ export default function Nav() {
     return <Flowbite theme={{
         theme: {
             navbar: {
-                base: `px-2 py-2.5 transition-all duration-500 sm:px-4 ${isScrolled ? "border-gray-700 bg-gray-800" : "bg-gray-800 bg-opacity-10"}`
+                base: `px-2 py-2.5 transition-all sm:px-4 ${isScrolled ? "border-gray-300 bg-gray-800 duration-500" : "bg-gray-800 bg-opacity-10 duration-700"}`
             }
         }
     }}>
-        <div class={`fixed w-full transition-all duration-500 top-0 left-0 ${isScrolled ? "p-2" : "p-0 mb-4"}`}>
+        <div class={`fixed w-full transition-all top-0 left-0 ${isScrolled ? "p-2 duration-300" : "p-0 mb-4 duration-700"}`}>
             <Navbar fluid rounded={isScrolled}>
                 <Navbar.Brand href="/">
                     <Logo class="text-3xl font-light" $text={!isScrolled} />
