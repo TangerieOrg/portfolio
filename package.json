@@ -58,6 +58,8 @@
     },
     "devDependencies": {
         "@babel/core": "^7.19.1",
+        "@parcel/packager-raw-url": "^2.7.0",
+        "@parcel/transformer-webmanifest": "^2.7.0",
         "@types/lodash": "^4.14.185",
         "process": "^0.11.10"
     }
