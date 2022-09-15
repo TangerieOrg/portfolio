@@ -1,5 +1,6 @@
 import Logo from "@components/common/Logo";
 import NavLink from "@components/common/NavLink";
+import useMediaQuery from "@modules/common/useMediaQuery";
 import useScroll from "@modules/common/useScroll";
 import { Flowbite, Navbar } from "flowbite-react";
 import { useMemo } from "preact/hooks";
@@ -8,6 +9,7 @@ const useIsScrolled = () => useScroll(100) > 50;
 
 export default function Nav() {
     const isScrolled = useIsScrolled();
+    const isLarge = useMediaQuery("(min-width: 768px)");
 
     return <Flowbite theme={{
         theme: {
@@ -19,7 +21,7 @@ export default function Nav() {
         <div class={`fixed w-full transition-all top-0 left-0 ${isScrolled ? "p-2 duration-300" : "p-0 mb-4 duration-700"}`}>
             <Navbar fluid rounded={isScrolled}>
                 <Navbar.Brand href="/">
-                    <Logo class="text-3xl font-light" $text={!isScrolled} />
+                    <Logo class="text-3xl font-light" $text={!isScrolled && isLarge} />
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>

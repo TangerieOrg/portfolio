@@ -20,15 +20,12 @@ export default function TypedBanner() {
     }, []);
 
     return <div>
-        <h1 class="text-8xl font-extralight">
+        <h1 class="text-6xl md:text-8xl font-extralight">
             <TypeAnimation
                 sequence={sequence}
                 speed={40}
                 repeat={Infinity}
             />
         </h1>
-        {/* <h2 class="mt-8 text-4xl font-extralight">
-            Welcome to my site
-        </h2> */}
     </div>
 }
