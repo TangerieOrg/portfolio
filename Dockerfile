@@ -1,14 +1,15 @@
-FROM node:18.4.0
+FROM node:18.3.0
 
 ENV NODE_ENV=production
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm i -D
+RUN npm ci
 
 COPY . .
 
 EXPOSE 8080
-CMD ["bash", "docker-entrypoint.sh"]
+
+ENTRYPOINT ["bash", "docker-entrypoint.sh"]
