@@ -10,7 +10,5 @@ RUN npm i -D
 
 COPY . .
 
-RUN npm run web
-
 EXPOSE 8080
 CMD ["bash", "docker-entrypoint.sh"]
