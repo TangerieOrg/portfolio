@@ -1,4 +1,4 @@
-import { siGithub, siInstagram, siLinkedin } from 'simple-icons/icons';
+import { siGithub, siInstagram, siLinkedin, siSpotify } from 'simple-icons/icons';
 
 export default [
     {
@@ -15,5 +15,10 @@ export default [
         name: "LinkedIn",
         icon: siLinkedin.svg,
         link: "https://www.linkedin.com/in/joshua-cavill-958164190/"
+    },
+    {
+        name: "Spotify",
+        icon: siSpotify.svg,
+        link: "https://open.spotify.com/user/sharbyboy03?si=32c3cec20e144b25"
     }
 ]
