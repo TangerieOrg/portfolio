@@ -9,7 +9,7 @@ export default function Home() {
         <Nav />
         <div class="h-screen bg-gradient-to-b from-indigo-500 to-purple-700 bg-fixed flex flex-col justify-center text-center">
             <TypedBanner />
-            <div class="flex flex-row justify-center mt-16 space-x-4">
+            <div class="flex md:flex-row flex-col md:justify-center mt-16 mx-auto w-fit">
                 <SocialButton
                     text="Github"
                     // @ts-ignore
