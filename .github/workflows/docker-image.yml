@@ -13,15 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
-
-    - name: Build the Docker image
-      run: docker build --file Dockerfile --tag tangerie/portfolio:${{ steps.date.outputs.date }} .
-
-    - name: Remove previous image
-      run: docker rm -f portfolio 2> /dev/null
-
-    - name: Run the Docker image
-      run: docker run --network=host -d --name portfolio --restart unless-stopped tangerie/portfolio:${{ steps.date.outputs.date }}
+    - name: Build and run the Docker image
+      run: docker compose up --build -d --no-deps --force-recreate

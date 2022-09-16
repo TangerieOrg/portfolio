@@ -11,10 +11,8 @@
         /* Language and Environment */
         "target": "ESNext", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
         "lib": [
-            "DOM",
             "ESNext"
         ], /* Specify a set of bundled library declaration files that describe the target runtime environment. */
-        "jsx": "react-jsx", /* Specify what JSX code is generated. */
         "experimentalDecorators": true, /* Enable experimental support for TC39 stage 2 draft decorators. */
         // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
         // "jsxFactory": "h", /* Specify the JSX factory function used when targeting React JSX emit, e.g. 'React.createElement' or 'h'. */
@@ -29,19 +27,7 @@
         "rootDir": "./src", /* Specify the root folder within your source files. */
         "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
         "baseUrl": "./src",                                  /* Specify the base directory to resolve non-relative module names. */
-        "paths": {
-            "react": [
-                "./node_modules/preact/compat/"
-            ],
-            "react-dom": [
-                "./node_modules/preact/compat/"
-            ],
-            "@components/*": ["www/components/*"] ,
-            "@routes/*": ["www/routes/*"],
-            "@modules/*": ["www/modules/*"],
-            "@assets/*": ["www/assets/*"],
-            "./src/www/index.html": ["./src/www/index.html"]
-        }, /* Specify a set of entries that re-map imports to additional lookup locations. */
+        // "paths": {}, /* Specify a set of entries that re-map imports to additional lookup locations. */
         // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
         // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
         // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
