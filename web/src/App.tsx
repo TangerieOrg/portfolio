@@ -1,15 +1,24 @@
 import {
-    RouterProvider,
+    Route,
+    Routes,
 } from "react-router-dom";
-import routes from "./routes";
 
 import 'mac-scrollbar/dist/mac-scrollbar.css';
 
 import { GlobalScrollbar } from 'mac-scrollbar';
+import FourOhFour from "@routes/FourOhFour";
+import Home from "@routes/Home";
+import { useAnalytics } from "@modules/analytics";
 
 export default function App() {
+    useAnalytics();
+
     return <div class="text-white min-h-screen bg-gray-900">
         <GlobalScrollbar/>
-        <RouterProvider router={routes} />
+
+        <Routes>
+            <Route path="*" element={<FourOhFour/>}/>
+            <Route path="/" element={<Home/>}/>
+        </Routes>
     </div>
 }

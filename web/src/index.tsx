@@ -6,7 +6,13 @@ if (process.env.NODE_ENV==='development') {
 }
 
 import { render } from "preact";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
+const ToRender = () => (
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
+);
 
-render(<App />, document.getElementById("root")!);
+render(<ToRender />, document.getElementById("root")!);
