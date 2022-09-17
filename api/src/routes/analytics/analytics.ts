@@ -6,12 +6,13 @@ export const router = Router();
 router.get("/", async (req, res) => {
     const userData = await getTrackingData(req, res);
 
-
-
     res.json(userData);
 });
 
 router.post("/log", async (req, res) => {
-    await logRequest(req, res, req.body);
+    await logRequest(req, res, {
+        ...req.body,
+        origin: "web"
+    });
     res.json({});
 });

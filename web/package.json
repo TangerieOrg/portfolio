@@ -55,5 +55,8 @@
         "react-dom": "preact/compat",
         "react/jsx-runtime": "preact/jsx-runtime",
         "preact/jsx-dev-runtime": "preact/jsx-runtime"
+    },
+    "devDependencies": {
+        "process": "^0.11.10"
     }
 }

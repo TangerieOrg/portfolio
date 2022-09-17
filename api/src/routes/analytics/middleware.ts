@@ -5,6 +5,7 @@ import { TrackingInstance } from "./types";
 
 export async function AnalyticsMiddleware(req : Request, res : Response, next : NextFunction) {
     req.tracking = await getCookie(req, res);
+
     next();
 }
 

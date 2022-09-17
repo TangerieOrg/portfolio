@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { CreateDatabase } from "../../modules/database";
-import { TrackingInstance, TrackingVisit } from "./types";
+import { TrackingVisit } from "./types";
 
 export async function getTrackingData(req : Request, res : Response) {
     const data = await req.redis.json.get(`tracking:${req.tracking}`);
@@ -8,8 +7,16 @@ export async function getTrackingData(req : Request, res : Response) {
     return data;
 }
 
-export async function logRequest(req : Request, res : Response, visit : TrackingVisit) {
-    visit.ts = Date.now();
-    await req.redis.json.arrAppend(`tracking:${req.tracking}`, ".visits", visit as any);
+export async function logRequest(req : Request, res : Response, visit : Partial<TrackingVisit>) {
+    const data : TrackingVisit = {
+        data: visit.data ?? {},
+        origin: visit.origin ?? "Unknown",
+        route: visit.route ?? "Unknown",
+        tags: visit.tags ?? [],
+        ts: Date.now(),
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] ?? "Unknown"
+    }
+    await req.redis.json.arrAppend(`tracking:${req.tracking}`, ".visits", data as any);
 }
 

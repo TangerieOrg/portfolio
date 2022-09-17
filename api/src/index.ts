@@ -10,9 +10,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json({
-    
-}));
+app.set('trust proxy', true)
+
+app.use(express.json());
 
 app.use(cookieMiddleware(process.env.COOKIE_SECRET || "cookie_secret"));
 
