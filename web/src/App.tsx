@@ -9,8 +9,10 @@ import { GlobalScrollbar } from 'mac-scrollbar';
 import FourOhFour from "@routes/FourOhFour";
 import Home from "@routes/Home";
 import { useAnalytics } from "@modules/analytics";
+import Admin from "@routes/Admin";
+import { withAuthentication } from "@modules/authentication/authentication";
 
-export default function App() {
+function App() {
     useAnalytics();
 
     return <div class="text-white min-h-screen bg-gray-900">
@@ -19,6 +21,9 @@ export default function App() {
         <Routes>
             <Route path="*" element={<FourOhFour/>}/>
             <Route path="/" element={<Home/>}/>
+            <Route path="/admin" element={<Admin/>}/>
         </Routes>
     </div>
 }
+
+export default withAuthentication(App);

@@ -40,6 +40,7 @@
         "parcel-resolver-tspaths": "^0.0.9",
         "postcss": "^8.4.16",
         "preact": "^10.11.0",
+        "react-hook-form": "^7.35.0",
         "react-inlinesvg": "^3.0.1",
         "react-router-dom": "^6.4.0",
         "react-type-animation": "^2.1.1",
