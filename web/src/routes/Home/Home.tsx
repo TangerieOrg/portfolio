@@ -29,7 +29,7 @@ export default function Home() {
                 <span class="text-2xl mb-8 transition-transform cursor-pointer hover:translate-y-2" onClick={() => {
                     window.scrollTo({
                         behavior: "smooth",
-                        top: window.innerHeight - 64
+                        top: window.innerHeight - 72
                     })
                 }}>
                     <FontAwesomeIcon icon={solid("chevron-down")}/>
