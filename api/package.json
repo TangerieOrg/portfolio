@@ -2,8 +2,10 @@
     "name": "portfolio-api",
     "version": "0.0.1",
     "description": "",
+    "main": "dist/index.js",
     "scripts": {
-        "start": "node -r ts-node/register src/index.ts",
+        "start": "node .",
+        "build": "tsc",
         "dev": "nodemon src/index.ts",
         "clean": "rimraf dist"
     },

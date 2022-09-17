@@ -1,4 +1,4 @@
-import { RedisClientType } from "@redis/client";
+import { Request, Response, NextFunction } from "express";
 import { createClient } from "redis";
 
 export async function CreateDatabase() {
@@ -9,4 +9,16 @@ export async function CreateDatabase() {
     await client.connect();
 
     return client;
+}
+
+export async function DatabaseMiddleware(req : Request, res : Response, next : NextFunction) {
+    const client = await CreateDatabase();
+
+    req.redis = client;
+
+    req.on("finish", () => {
+        client.quit();
+    });
+
+    next();
 }
