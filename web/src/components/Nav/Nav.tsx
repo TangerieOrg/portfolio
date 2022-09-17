@@ -1,5 +1,4 @@
 import Logo from "@components/common/Logo";
-import NavLink from "@components/common/NavLink";
 import Socials from "@modules/common/Socials";
 import useMediaQuery from "@modules/common/useMediaQuery";
 import useScroll from "@modules/common/useScroll";
@@ -23,7 +22,7 @@ export default function Nav() {
     return <Flowbite theme={{
         theme: {
             navbar: {
-                base: `px-2 py-2.5 transition-all sm:px-4 ${isScrolled ? "border-gray-300 bg-gray-800 duration-500" : "bg-gray-800 bg-opacity-10 duration-700"}`
+                base: `px-2 py-2.5 transition-all sm:px-4 ${isScrolled ? "shadow-lg border-gray-300 dark:bg-gray-800 dark:text-white text-black bg-gray-100 duration-500" : "bg-gray-800 bg-opacity-10 duration-700"}`
             }
         }
     }}>

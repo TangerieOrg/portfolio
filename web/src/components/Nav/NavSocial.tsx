@@ -10,6 +10,6 @@ interface Props {
 
 export default function NavSocial({ to, icon } : Props) {
     return <a href={to} target="_blank">
-        <SVGString $src={icon} class="h-6 inline transition-colors fill-white hover:fill-purple-200 cursor-pointer"/>
+        <SVGString $src={icon} class="h-6 inline dark:fill-white fill-black transition-colors hover:fill-purple-200 cursor-pointer"/>
     </a>
 }
