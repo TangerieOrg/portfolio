@@ -1,9 +1,19 @@
 version: '3'
 
 services:
+    database:
+        image: redislabs/redismod
+        volumes:
+            - redis-data:/data
+            - redis-conf:/usr/local/etc/redis/redis.conf
+        expose:
+            - "6379"
+
     api:
         ports:
             - 8080:8080
+        depends_on:
+            - database
         build: ./api
 
     frontend:
@@ -13,3 +23,7 @@ services:
             - api
         build: 
             context: ./web
+
+volumes:
+    redis-data:
+    redis-conf:
