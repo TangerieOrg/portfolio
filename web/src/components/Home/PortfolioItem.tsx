@@ -40,9 +40,9 @@ export default function PortfolioItem(props: Props) {
             <span class="grid grid-cols-2 gap-x-4">
                 {
                     props.siteLink && <a href={props.siteLink}
-                        class="pl-4 pr-6 py-2 h-full w-full my-1 bg-blue-600 rounded-lg text-lg flex flex-row justify-between group transition-colors hover:bg-blue-700">
-                        <span class="flex flex-col justify-center">View Site</span>
-                        <span class="ml-2 flex flex-col transition-transform justify-center group-hover:translate-x-2">
+                        class="pl-4 pr-6 py-2 h-full w-full my-1 bg-blue-600 rounded-lg text-lg flex flex-row justify-between group transition-colors hover:bg-blue-700 md:text-lg text-bas">
+                        <span class="flex flex-col justify-center h-full text-ellipsis max-w-full overflow-x-hidden">View Site</span>
+                        <span class="ml-2 flex flex-col h-full transition-transform justify-center group-hover:translate-x-2">
                             <FontAwesomeIcon icon={solid("arrow-right")} />
                         </span>
                     </a>
@@ -51,11 +51,11 @@ export default function PortfolioItem(props: Props) {
                 {
                     props.codeLink && <a href={props.codeLink}
                         target="_blank"
-                        class="pl-4 pr-6 py-2 h-full w-full my-1 bg-gray-600 rounded-lg text-lg flex flex-row justify-between group transition-colors hover:bg-gray-700">
-                        <span class="mr-2 flex flex-col justify-center fill-white">
+                        class="pl-4 pr-6 py-2 h-full w-full my-1 bg-gray-600 rounded-lg flex flex-row group transition-colors hover:bg-gray-700 md:text-lg text-bas">
+                        <span class="mr-2 flex flex-col justify-center fill-white h-full">
                             <SVGString $src={siGithub.svg} class="h-6" />
                         </span>
-                        <span class="flex flex-col justify-center">View Code</span>
+                        <span class="flex flex-col justify-center h-full text-ellipsis max-w-full overflow-x-hidden">View Code</span>
                     </a>
                 }
             </span>
