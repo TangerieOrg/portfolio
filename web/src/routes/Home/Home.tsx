@@ -36,7 +36,7 @@ export default function Home() {
                 </span>
             </div>
         </div>
-        <div class="px-8 py-8 grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 shadow-inner gap-x-16 gap-y-8">
+        <div class="px-8 py-8 grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 shadow-inner gap-x-16 gap-y-8">
             <PortfolioItem
             title="Mixr"
             description="A Spotify application for mixing/analyzing playlists based on vibe"
