@@ -25,7 +25,9 @@ async function getCookie(req : Request, res : Response) {
         res.cookie("tracker", cookie, {
             signed: true
         });
+    }
 
+    if(!await req.redis.exists(`tracking:${cookie}`)) { 
         await createTrackingInstance(req, cookie);
     }
 
