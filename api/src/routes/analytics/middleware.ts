@@ -23,7 +23,8 @@ async function getCookie(req : Request, res : Response) {
     if(!cookie) {
         cookie = randomBytes(20).toString("hex");
         res.cookie("tracker", cookie, {
-            signed: true
+            signed: true,
+            expires: new Date(9999, 1)
         });
     }
 
