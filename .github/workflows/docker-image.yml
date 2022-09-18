@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build and run the Docker image
-      run: docker compose up --build -d --no-deps --force-recreate
+      run: docker compose up --build -d --no-deps
