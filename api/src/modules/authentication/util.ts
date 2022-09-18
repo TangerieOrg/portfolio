@@ -16,7 +16,18 @@ export async function loginUser(username : string, password : string) {
             username,
             password
         }
-    }).then(x => x?.data as LoginResponse | undefined);
+    }).then(x => x?.data as LoginResponse | undefined).catch(err => undefined);
 
     return response?.cookie;
+}
+
+export async function registerUser(username : string, password : string) {
+    const response = await axios.get(`${AUTH_URL}/register`, {
+        data: {
+            username,
+            password
+        }
+    }).then(x => x?.data).catch(err => undefined);
+
+    return response;
 }
