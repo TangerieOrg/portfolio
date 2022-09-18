@@ -9,7 +9,7 @@ export default [
     {
         name: "Instagram",
         icon: siInstagram.svg,
-        link: "https://www.instagram.com/j.cavill/"
+        link: "https://www.instagram.com/tangerie.dev/"
     },
     {
         name: "LinkedIn",
