@@ -20,7 +20,7 @@ services:
         build: ./api
         environment:
             - REDIS_URL=redis://database:6379
-            - AUTH_SERVICE_URL=auth:8000
+            - AUTH_SERVICE_URL=http://auth:8000
         networks:
             - default
             - authenticationservice_auth-net
