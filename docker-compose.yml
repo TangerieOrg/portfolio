@@ -22,7 +22,7 @@ services:
             - REDIS_URL=redis://database:6379
         networks:
             - default
-            - authenticationservice_default
+            - authenticationservice_auth-net
 
     frontend:
         ports:
@@ -41,5 +41,5 @@ volumes:
 networks:
     default:
         driver: bridge
-    authenticationservice_default:
+    authenticationservice_auth-net:
         external: true
