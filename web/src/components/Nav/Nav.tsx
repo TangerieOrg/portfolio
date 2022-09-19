@@ -26,10 +26,12 @@ export default function Nav() {
             }
         }
     }}>
-        <div class={`fixed w-full transition-all top-0 left-0 ${isScrolled ? "p-2 duration-300" : "p-0 mb-4 duration-700"}`}>
+        <div class={`fixed w-full transition-all z-40 top-0 left-0 ${isScrolled ? "p-2 duration-300" : "p-0 mb-4 duration-700"}`}>
             <Navbar fluid rounded={isScrolled}>
                 <Navbar.Brand href="/">
-                    <Logo class="text-3xl font-light ml-2 md:ml-0" $text={(!isScrolled && isLarge) || showText}/>
+                    <div onMouseEnter={() => setShowText(true)} onMouseLeave={() => setShowText(false)}>
+                        <Logo class="text-3xl font-light ml-2 md:ml-0" $text={(!isScrolled && isLarge) || showText}/>
+                    </div>
                 </Navbar.Brand>
                 <div class="block w-auto">
                     <ul class="flex mt-0 flex-row space-x-4 md:space-x-8 text-sm font-medium mr-2 md:mr-0">

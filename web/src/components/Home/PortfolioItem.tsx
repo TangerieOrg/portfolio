@@ -1,19 +1,12 @@
+import Card from "@components/common/Card";
 import SVGString from "@components/common/SVGString";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Card } from "flowbite-react";
+// import { Card } from "flowbite-react";
 import { ComponentChildren } from "preact";
 import { siGithub } from "simple-icons/icons";
 
 
-
-function LinkButton({ children, to }: { children: ComponentChildren, to: string }) {
-    return <a href={to} class="px-4 py-2 h-full w-full my-2 mx-2 border-white border rounded-lg text-lg flex flex-row group transition-colors hover:bg-white hover:text-purple-500">
-        {
-            children
-        }
-    </a>
-}
 
 interface Props {
     title: string;
@@ -24,7 +17,7 @@ interface Props {
 }
 
 export default function PortfolioItem(props: Props) {
-    return <div class="max-h-fit">
+    return <div class="h-full min-h-fit">
         <Card imgSrc={props.img}>
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {
