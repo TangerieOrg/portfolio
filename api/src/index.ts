@@ -2,11 +2,10 @@ import express from "express";
 
 import dotenv from 'dotenv';
 import analytics, { AnalyticsMiddleware } from "./routes/analytics";
-import auth from "./routes/auth";
 
 import cookieMiddleware from "cookie-parser";
 import { DatabaseMiddleware } from "./modules/database";
-import AuthMiddleware from "./modules/authentication/AuthMiddleware";
+import { AuthMiddleware, Routes } from "@tangerie/authentication_middleware/lib";
 
 dotenv.config();
 
@@ -28,7 +27,9 @@ const port = process.env.PORT || 8080;
 
 app.use("/analytics", analytics);
 
-app.use("/", auth);
+app.get("/login", Routes.login);
+app.get("/register", Routes.register);
+app.get("/user", (req, res) => res.json(req.user));
 
 app.listen(port, () => {
     console.log("Listening on port", port);
