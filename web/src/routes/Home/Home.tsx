@@ -6,6 +6,7 @@ import { Card } from "flowbite-react";
 import MixrImage from "@assets/projects/Mixr.png";
 import PortfolioImage from "@assets/projects/Portfolio.png";
 import PortfolioItem from "@components/Home/PortfolioItem";
+import LookThatsMeImage from "@assets/projects/LookThatsMe.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
@@ -50,6 +51,12 @@ export default function Home() {
             img={PortfolioImage}
             siteLink="/"
             codeLink="https://github.com/TangerieOrg/portfolio"/>
+
+            <PortfolioItem
+            title="Look Thats Me!"
+            description="A reverse image search for facial detection"
+            img={LookThatsMeImage}
+            siteLink="https://lookthats.me/search"/>   
         </div>
     </>
 }
