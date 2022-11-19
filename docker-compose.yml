@@ -12,18 +12,18 @@ services:
             - default
         
 
-    api:
-        ports:
-            - 8080:8080
-        depends_on:
-            - database
-        build: ./api
-        environment:
-            - REDIS_URL=redis://database:6379
-            - AUTH_SERVICE_URL=http://auth:8000
-        networks:
-            - default
-            - authenticationservice_auth-net
+    # api:
+    #     ports:
+    #         - 8080:8080
+    #     depends_on:
+    #         - database
+    #     build: ./api
+    #     environment:
+    #         - REDIS_URL=redis://database:6379
+    #         - AUTH_SERVICE_URL=http://auth:8000
+    #     networks:
+    #         - default
+    #         - authenticationservice_auth-net
 
     frontend:
         ports:
