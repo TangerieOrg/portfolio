@@ -28,8 +28,8 @@ services:
     frontend:
         ports:
             - 8081:3000
-        depends_on:
-            - api
+        # depends_on:
+        #     - api
         build: 
             context: ./web
         networks:
