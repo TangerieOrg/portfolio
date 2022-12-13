@@ -52,11 +52,11 @@ export default function Home() {
             siteLink="/"
             codeLink="https://github.com/TangerieOrg/portfolio"/>
 
-            <PortfolioItem
+            {/* <PortfolioItem
             title="Look Thats Me!"
             description="A reverse image search for facial detection"
             img={LookThatsMeImage}
-            siteLink="https://lookthats.me/search"/>   
+            siteLink="https://lookthats.me/search"/>    */}
         </div>
     </>
 }
