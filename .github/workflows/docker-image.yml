@@ -36,8 +36,8 @@ jobs:
       - name: Build and push web image
         run: docker buildx build --push --platform ${{env.ARCH_LIST}} -t docker.tangerie.xyz/${{env.IMAGE_NAME}}-web:latest -t docker.tangerie.xyz/${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}} web
 
-      - name: Build and push api image
-        run: docker buildx build --push --platform ${{env.ARCH_LIST}} -t docker.tangerie.xyz/${{env.IMAGE_NAME}}-web:latest -t docker.tangerie.xyz/${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}} api
+      # - name: Build and push api image
+      #   run: docker buildx build --push --platform ${{env.ARCH_LIST}} -t docker.tangerie.xyz/${{env.IMAGE_NAME}}-web:latest -t docker.tangerie.xyz/${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}} api
 
       - name: Run image
         run: docker stack deploy -c docker-compose.yml portfolio

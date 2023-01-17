@@ -1,4 +1,4 @@
-FROM node:18.3.0
+FROM node:18.3.0 AS build
 
 ENV NODE_ENV=production
 
@@ -12,6 +12,12 @@ COPY . .
 
 RUN npm run build
 
+FROM node:18.3.0
+
+WORKDIR /app
+
+COPY --from=build /app/dist /app
+
 EXPOSE 3000
 
-ENTRYPOINT ["npx", "serve", "-s", "dist"]
+ENTRYPOINT ["npx", "serve", "-s", "."]
