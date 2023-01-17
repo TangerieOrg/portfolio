@@ -18,7 +18,7 @@ services:
     #         - 8080:8080
     #     depends_on:
     #         - database
-    #     build: ./api
+    #     image: docker.tangerie.xyz/portfolio-api:latest
     #     environment:
     #         - REDIS_URL=redis://database:6379
     #         - AUTH_SERVICE_URL=http://auth:8000
@@ -31,8 +31,7 @@ services:
             - 8081:3000
         # depends_on:
         #     - api
-        build: 
-            context: ./web
+        image: docker.tangerie.xyz/portfolio-web:latest
         restart: always
         networks:
             - default

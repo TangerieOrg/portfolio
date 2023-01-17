@@ -2,7 +2,6 @@ import SocialButton from "@components/Home/SocialButton"
 import TypedBanner from "@components/Home/TypedBanner"
 import Nav from "@components/Nav"
 import Socials from "@modules/common/Socials";
-import { Card } from "flowbite-react";
 import MixrImage from "@assets/projects/Mixr.png";
 import PortfolioImage from "@assets/projects/Portfolio.png";
 import PortfolioItem from "@components/Home/PortfolioItem";
