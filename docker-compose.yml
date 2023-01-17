@@ -1,16 +1,16 @@
 version: '3'
 
 services:
-    database:
-        image: redislabs/redismod
-        volumes:
-            - redis-data:/data
-            - redis-conf:/usr/local/etc/redis/redis.conf
-        expose:
-            - "6379"
-        restart: always
-        networks:
-            - default
+    # database:
+    #     image: redislabs/redismod
+    #     volumes:
+    #         - redis-data:/data
+    #         - redis-conf:/usr/local/etc/redis/redis.conf
+    #     expose:
+    #         - "6379"
+    #     restart: always
+    #     networks:
+    #         - default
         
 
     # api:
@@ -35,13 +35,13 @@ services:
         restart: always
         networks:
             - default
+        deploy:
+            mode: global
 
-volumes:
-    redis-data:
-    redis-conf:
+# volumes:
+#     redis-data:
+#     redis-conf:
 
 networks:
-    default:
-        driver: bridge
-    authenticationservice_auth-net:
-        external: true
+  app:
+    driver: overlay
