@@ -4,8 +4,8 @@ import Nav from "@components/Nav"
 import Socials from "@modules/common/Socials";
 import MixrImage from "@assets/projects/Mixr.png";
 import PortfolioImage from "@assets/projects/Portfolio.png";
+import VoxImage from "@assets/projects/Vox.png";
 import PortfolioItem from "@components/Home/PortfolioItem";
-import LookThatsMeImage from "@assets/projects/LookThatsMe.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
@@ -51,11 +51,12 @@ export default function Home() {
             siteLink="/"
             codeLink="https://github.com/TangerieOrg/portfolio"/>
 
-            {/* <PortfolioItem
-            title="Look Thats Me!"
-            description="A reverse image search for facial detection"
-            img={LookThatsMeImage}
-            siteLink="https://lookthats.me/search"/>    */}
+            <PortfolioItem
+            title="Voxcartes"
+            description="A demo of a very early stage voxel game engine"
+            img={VoxImage}
+            siteLink="/vox"
+            codeLink="https://github.com/TangerieOrg/Voxcartes"/>
         </div>
     </>
 }
