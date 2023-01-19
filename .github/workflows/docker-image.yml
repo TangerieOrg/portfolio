@@ -40,6 +40,7 @@ jobs:
           --platform ${{env.ARCH_LIST}}
           -t ${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}}
           -t ${{env.IMAGE_NAME}}:latest
+          --build-arg FONTAWESOME_NPM_AUTH_TOKEN=${{env.FONT_AWESOME_KEY}}
           web
 
   deploy:

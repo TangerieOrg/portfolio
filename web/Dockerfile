@@ -1,5 +1,7 @@
 FROM --platform=$BUILDPLATFORM node:18.3.0 AS build
 
+ARG FONTAWESOME_NPM_AUTH_TOKEN
+
 ENV NODE_ENV=production
 
 WORKDIR /app
