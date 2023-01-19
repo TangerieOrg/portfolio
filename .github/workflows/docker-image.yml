@@ -60,5 +60,5 @@ jobs:
       - name: Debug
         run: docker compose convert
 
-      # - name: Run image
-      #   run: docker stack deploy -c - ${{ github.event.repository.name }} < docker compose convert
+      - name: Run image
+        run: docker stack deploy -c - ${{ github.event.repository.name }} < docker compose convert
