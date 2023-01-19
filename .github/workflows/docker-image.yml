@@ -4,6 +4,7 @@ env:
   IMAGE_NAME: docker.tangerie.xyz/${{ github.event.repository.name }}
   ARCH_LIST: linux/arm64/v8,linux/amd64
   CURRENT_TAG: ${{ github.sha }}
+  FONT_AWESOME_KEY: ${{ secrets.FONT_AWESOME_KEY }}
 
 on:
   push:
@@ -49,13 +50,6 @@ jobs:
     steps:
       - name: Pull repo
         uses: actions/checkout@v3
-
-      - name: Login
-        uses: docker/login-action@v2
-        with:
-          registry: docker.tangerie.xyz
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Run image
         run:  docker stack deploy -c docker-compose.yml ${{ github.event.repository.name }}
