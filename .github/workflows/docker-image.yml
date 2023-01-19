@@ -1,7 +1,7 @@
 name: Docker Image CI
 
 env:
-  IMAGE_NAME: docker.tangerie.xyz/${{ github.repository }}
+  IMAGE_NAME: docker.tangerie.xyz/${{ github.event.repository.name }}
   ARCH_LIST: linux/arm64/v8,linux/amd64
   CURRENT_TAG: ${{ github.sha }}
 
@@ -61,4 +61,4 @@ jobs:
         run: docker compose convert
 
       # - name: Run image
-      #   run: docker stack deploy -c - ${{ github.repository }} < docker compose convert
+      #   run: docker stack deploy -c - ${{ github.event.repository.name }} < docker compose convert
