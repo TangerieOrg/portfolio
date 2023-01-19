@@ -1,6 +1,8 @@
 version: '3'
 services:
     frontend:
+        environment:
+            - FONT_AWESOME_KEY
         ports:
             - 8081:3000
         image: ${IMAGE_NAME}:latest
