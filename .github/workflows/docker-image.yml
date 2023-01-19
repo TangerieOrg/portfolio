@@ -32,20 +32,10 @@ jobs:
       - name: Print data
         run: echo Building to ${{env.IMAGE_NAME}} ${{env.CURRENT_TAG}}
 
-      - name: cache docker cache
-        uses: actions/cache@v1
-        with: 
-          path: ${{ github.workspace }}/cache
-          key: ${{ runner.os }}-docker-${{ hashfiles('cache/**') }}
-          restore-keys: |
-            ${{ runner.os }}-docker-
-
       - name: Build and push web image
         # run: docker buildx build --push --platform ${{env.ARCH_LIST}} -t ${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}} -t ${{env.IMAGE_NAME}}:latest web
         run: >
           docker buildx build 
-          --cache-from "type=local,src=$GITHUB_WORKSPACE/cache"
-          --cache-to "type=local,dest=$GITHUB_WORKSPACE/cache"
           --push
           --platform ${{env.ARCH_LIST}}
           -t ${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}}
