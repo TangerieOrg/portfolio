@@ -56,9 +56,6 @@ jobs:
           registry: docker.tangerie.xyz
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      
-      - name: Debug
-        run: docker compose convert > docker-compose.yml
 
       - name: Run image
-        run:  docker stack deploy -c compose.yml ${{ github.event.repository.name }}
+        run:  docker stack deploy -c docker-compose.yml ${{ github.event.repository.name }}
