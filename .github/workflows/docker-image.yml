@@ -58,7 +58,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       
       - name: Debug
-        run: docker compose convert
+        run: docker compose convert > compose.yml
 
       - name: Run image
-        run: docker stack deploy -c - ${{ github.event.repository.name }} < docker compose convert
+        run:  docker stack deploy -c compose.yml ${{ github.event.repository.name }}
