@@ -4,7 +4,7 @@ services:
     frontend:
         ports:
             - 8081:3000
-        image: docker.tangerie.xyz/portfolio-web:latest
+        image: ${IMAGE_NAME}:latest
         restart: always
         networks:
             - default
