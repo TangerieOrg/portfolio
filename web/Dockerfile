@@ -8,7 +8,7 @@ COPY package*.json ./
 
 RUN echo $FONT_AWESOME_KEY
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-RUN npm config set "//npm.fontawesome.com/:_authToken" $FONT_AWESOME_KEY
+RUN npm config set "//npm.fontawesome.com/:_authToken=$FONT_AWESOME_KEY" 
 
 RUN npm ci
 
