@@ -10,12 +10,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-COPY .npmrc .npmrc
-
 RUN echo NPM Auth $FONTAWESOME_NPM_AUTH_TOKEN
 
 RUN npm config set "@fortawesome:registry" https://npm.fontawesome.com/
 RUN npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
+
+RUN npm config ls
 
 RUN npm ci
 
