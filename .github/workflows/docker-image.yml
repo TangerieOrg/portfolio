@@ -34,7 +34,6 @@ jobs:
         run: echo Building to ${{env.IMAGE_NAME}} ${{env.CURRENT_TAG}} ${{env.FONT_AWESOME_KEY}}
 
       - name: Build and push web image
-        # run: docker buildx build --push --platform ${{env.ARCH_LIST}} -t ${{env.IMAGE_NAME}}:${{env.CURRENT_TAG}} -t ${{env.IMAGE_NAME}}:latest web
         run: >
           docker buildx build 
           --push
