@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY package*.json ./
 
+COPY .npmrc .npmrc
+
 RUN npm ci
 
 COPY . .
