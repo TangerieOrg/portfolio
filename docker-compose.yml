@@ -1,47 +1,16 @@
 version: '3'
 
 services:
-    # database:
-    #     image: redislabs/redismod
-    #     volumes:
-    #         - redis-data:/data
-    #         - redis-conf:/usr/local/etc/redis/redis.conf
-    #     expose:
-    #         - "6379"
-    #     restart: always
-    #     networks:
-    #         - default
-        
-
-    # api:
-    #     ports:
-    #         - 8080:8080
-    #     depends_on:
-    #         - database
-    #     image: docker.tangerie.xyz/portfolio-api:latest
-    #     environment:
-    #         - REDIS_URL=redis://database:6379
-    #         - AUTH_SERVICE_URL=http://auth:8000
-    #     networks:
-    #         - default
-    #         - authenticationservice_auth-net
-
     frontend:
         ports:
             - 8081:3000
-        # depends_on:
-        #     - api
         image: docker.tangerie.xyz/portfolio-web:latest
         restart: always
         networks:
             - default
         deploy:
-            mode: global
-
-# volumes:
-#     redis-data:
-#     redis-conf:
-
+            replicas: 4
+            
 networks:
   app:
     driver: overlay
