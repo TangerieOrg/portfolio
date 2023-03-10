@@ -1,5 +1,8 @@
 import { siGithub, siInstagram, siLinkedin, siSpotify } from 'simple-icons/icons';
 
+// @ts-ignore
+import NexusLogo from "bundle-text:@assets/logos/nexus.svg";
+
 export default [
     {
         name: "Github",
@@ -20,5 +23,10 @@ export default [
         name: "Spotify",
         icon: siSpotify.svg,
         link: "https://open.spotify.com/user/sharbyboy03?si=32c3cec20e144b25"
+    },
+    {
+        name: "Nexus",
+        icon: NexusLogo,
+        link: "https://www.nexusmods.com/users/174872460?tab=user+files"
     }
 ]
