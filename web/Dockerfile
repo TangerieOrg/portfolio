@@ -17,7 +17,7 @@ RUN npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOK
 
 RUN npm config ls
 
-RUN npm ci
+RUN npm i
 
 COPY . .
 

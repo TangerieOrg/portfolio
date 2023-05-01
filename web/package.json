@@ -57,9 +57,5 @@
         "react-dom": "preact/compat",
         "react/jsx-runtime": "preact/jsx-runtime",
         "preact/jsx-dev-runtime": "preact/jsx-runtime"
-    },
-    "devDependencies": {
-        "@parcel/transformer-inline-string": "^2.8.3",
-        "process": "^0.11.10"
     }
 }
