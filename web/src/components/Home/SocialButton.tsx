@@ -1,7 +1,4 @@
 import SVGString from "@components/common/SVGString";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { ComponentChild } from "preact";
-import SVG from 'react-inlinesvg';
 
 interface Props {
     text : string;
