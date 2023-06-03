@@ -6,7 +6,10 @@ import MixrImage from "@assets/projects/Mixr.png";
 import PortfolioImage from "@assets/projects/Portfolio.png";
 import VoxImage from "@assets/projects/Vox.png";
 import BluefootImage from "@assets/projects/Bluefoot.png";
+import EverythingImage from "@assets/projects/Everything.png";
+
 import PortfolioItem from "@components/Home/PortfolioItem";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
@@ -65,6 +68,13 @@ export default function Home() {
             img={BluefootImage}
             siteLink="https://bluefootdev.tangerie.xyz"
             codeLink="https://github.com/TangerieOrg/Bluefoot"/>
+
+            <PortfolioItem
+            title="Everything"
+            description="A sample OpenAI auto-generated site"
+            img={EverythingImage}
+            siteLink="/everything"
+            codeLink="https://github.com/TangerieOrg/Everything"/>
         </div>
     </>
 }
