@@ -1,19 +1,17 @@
 version: '3'
 services:
     frontend:
-        ports:
-            - 8081:3000
         image: ${IMAGE_NAME}:latest
         networks:
-            - default
             - nginx-proxy-overlay
         deploy:
             replicas: 1
             labels:
-                xyz.tangerie.reverse_proxy: "/"
-
+                xyz.tangerie.reverse_proxy.path: "/"
+                xyz.tangerie.reverse_proxy.port: "3000"
             
 networks:
     nginx-proxy-overlay:
         external: true
         driver: overlay
+
