@@ -70,12 +70,12 @@ export default function Home() {
             siteLink="https://bluefootdev.tangerie.xyz"
             codeLink="https://github.com/TangerieOrg/Bluefoot"/>
 
-            <PortfolioItem
+            {/* <PortfolioItem
             title="Everything"
             description="A sample OpenAI auto-generated site"
             img={EverythingImage}
             siteLink="/everything"
-            codeLink="https://github.com/TangerieOrg/Everything"/>
+            codeLink="https://github.com/TangerieOrg/Everything"/> */}
 
             <PortfolioItem
             title="Codex of Everything"
