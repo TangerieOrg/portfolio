@@ -1,17 +1,19 @@
 version: '3'
 services:
     frontend:
-        environment:
-            - FONTAWESOME_NPM_AUTH_TOKEN=${FONT_AWESOME_KEY}
         ports:
             - 8081:3000
         image: ${IMAGE_NAME}:latest
-        restart: always
         networks:
             - default
+            - nginx-proxy-overlay
         deploy:
-            replicas: 4
+            replicas: 1
+            labels:
+                xyz.tangerie.reverse_proxy: "/"
+
             
 networks:
-  app:
-    driver: overlay
+    nginx-proxy-overlay:
+        external: true
+        driver: overlay
