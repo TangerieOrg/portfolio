@@ -42,12 +42,12 @@ export default function Home() {
             </div>
         </div>
         <div class="px-8 py-8 grid md:grid-cols-2 xl:grid-cols-3 grid-cols-1 shadow-inner gap-x-16 gap-y-8">
-            {/* <PortfolioItem
+            <PortfolioItem
             title="Mixr"
             description="A Spotify application for mixing/analyzing playlists based on vibe"
             img={MixrImage}
             siteLink="/mixr"
-            codeLink="https://github.com/TangerieOrg/Mixr"/> */}
+            codeLink="https://github.com/TangerieOrg/Mixr"/>
 
             <PortfolioItem
             title="Portfolio"
