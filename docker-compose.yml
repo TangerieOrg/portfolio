@@ -1,17 +1,21 @@
-version: '3'
+name: portfolio
+
 services:
     frontend:
-        image: ${IMAGE_NAME}:latest
+        build: ./web
+        image: portfolio-frontend:latest
+        pull_policy: never
+        restart: unless-stopped
         networks:
-            - nginx-proxy-overlay
-        deploy:
-            replicas: 1
-            labels:
-                xyz.tangerie.reverse_proxy.path: "/"
-                xyz.tangerie.reverse_proxy.port: "3000"
-            
-networks:
-    nginx-proxy-overlay:
-        external: true
-        driver: overlay
+            - traefik-proxy
+        labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik-proxy"
+            - "traefik.http.routers.portfolio.rule=PathPrefix(`/`)"
+            - "traefik.http.routers.portfolio.entrypoints=web,websecure"
+            - "traefik.http.routers.portfolio.priority=1"
+            - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
 
+networks:
+    traefik-proxy:
+        external: true
