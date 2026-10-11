@@ -5,9 +5,7 @@ import Socials from "@modules/common/Socials";
 import MixrImage from "@assets/projects/Mixr.png";
 import PortfolioImage from "@assets/projects/Portfolio.png";
 import VoxImage from "@assets/projects/Vox.png";
-import BluefootImage from "@assets/projects/Bluefoot.png";
 import EverythingImage from "@assets/projects/Everything.png";
-import CodexImage from "@assets/projects/Codex.png";
 
 import PortfolioItem from "@components/Home/PortfolioItem";
 
@@ -63,26 +61,12 @@ export default function Home() {
             siteLink="/vox"
             codeLink="https://github.com/TangerieOrg/Voxcartes"/>
 
-            <PortfolioItem
-            title="Bluefoot"
-            description="An in-development engine for education"
-            img={BluefootImage}
-            siteLink="https://bluefootdev.tangerie.xyz"
-            codeLink="https://github.com/TangerieOrg/Bluefoot"/>
-
             {/* <PortfolioItem
             title="Everything"
             description="A sample OpenAI auto-generated site"
             img={EverythingImage}
             siteLink="/everything"
             codeLink="https://github.com/TangerieOrg/Everything"/> */}
-
-            <PortfolioItem
-            title="Codex of Everything"
-            description="An infinite library of any text"
-            img={CodexImage}
-            siteLink="/codex"
-            codeLink="https://github.com/TangerieOrg/EverythingCodex"/>
         </div>
     </>
 }
